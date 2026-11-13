@@ -1,12 +1,11 @@
 const { bot } = require('../lib')
 
 const TRIGGER_PATTERNS = [
-  /first\s*\d+\s*(accounts?|to\s*drop)/i,
-  /\d+\s*(naira|₦|k)?\s*for\s*\d+\s*people/i,
-  /drop\s*(your\s*)?(aza|acc|account)/i,
+  /first\s*\d+\s*(accounts?|people|persons|users|to\s*(drop|comment|reply))/i,
+  /\d+\s*(naira|₦|k)?\s*(each\s*)?for\s*\d+\s*(people|persons|users)/i,
+  /drop\s*(your|ur|ya)?\s*(aza|acc|acct|account|opay|palmpay|details)/i,
   /giveaway/i,
 ]
-
 const ACCOUNT_MESSAGE = process.env.GIVEAWAY_ACCOUNT_MSG || ''
 const COOLDOWN_MS = Number(process.env.GIVEAWAY_COOLDOWN_MIN || 30) * 60 * 1000
 
